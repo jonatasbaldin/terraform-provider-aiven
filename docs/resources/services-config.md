@@ -230,6 +230,7 @@ This is the reference documentation for the User Config object for Aiven Service
 | `indices_queries_cache_size`              | [object](#indices_queries_cache_size)              | **Yes**  |             |
 | `indices_query_bool_max_clause_count`     | [object](#indices_query_bool_max_clause_count)     | **Yes**  |             |
 | `reindex_remote_whitelist`                | [object](#reindex_remote_whitelist)                | **Yes**  |             |
+| `search_max_buckets`                      | [object](#search_max_buckets)                      | **Yes**  |             |
 | `thread_pool_analyze_queue_size`          | [object](#thread_pool_analyze_queue_size)          | **Yes**  |             |
 | `thread_pool_analyze_size`                | [object](#thread_pool_analyze_size)                | **Yes**  |             |
 | `thread_pool_force_merge_size`            | [object](#thread_pool_force_merge_size)            | **Yes**  |             |
@@ -362,18 +363,31 @@ This is the reference documentation for the User Config object for Aiven Service
 | `items`       | [object](#items) | **Yes**  |             |
 | `maxItems`    | integer          | **Yes**  |             |
 | `title`       | string           | **Yes**  |             |
-| `type`        | string           | **Yes**  |             |
+| `type`        | [array](#type)   | **Yes**  |             |
 
 ####### items
 
 ######## Properties
 
-| Property    | Type    | Required | Description |
-|-------------|---------|----------|-------------|
-| `example`   | string  | **Yes**  |             |
-| `maxLength` | integer | **Yes**  |             |
-| `title`     | string  | **Yes**  |             |
-| `type`      | string  | **Yes**  |             |
+| Property    | Type           | Required | Description |
+|-------------|----------------|----------|-------------|
+| `example`   | string         | **Yes**  |             |
+| `maxLength` | integer        | **Yes**  |             |
+| `title`     | string         | **Yes**  |             |
+| `type`      | [array](#type) | **Yes**  |             |
+
+###### search_max_buckets
+
+####### Properties
+
+| Property      | Type           | Required | Description |
+|---------------|----------------|----------|-------------|
+| `description` | string         | **Yes**  |             |
+| `example`     | integer        | **Yes**  |             |
+| `maximum`     | integer        | **Yes**  |             |
+| `minimum`     | integer        | **Yes**  |             |
+| `title`       | string         | **Yes**  |             |
+| `type`        | [array](#type) | **Yes**  |             |
 
 ###### thread_pool_analyze_queue_size
 
@@ -2024,6 +2038,7 @@ This is the reference documentation for the User Config object for Aiven Service
 | `log_retention_hours`                        | [object](#log_retention_hours)                        | **Yes**  |             |
 | `log_segment_bytes`                          | [object](#log_segment_bytes)                          | **Yes**  |             |
 | `max_connections_per_ip`                     | [object](#max_connections_per_ip)                     | **Yes**  |             |
+| `max_incremental_fetch_session_cache_slots`  | [object](#max_incremental_fetch_session_cache_slots)  | **Yes**  |             |
 | `message_max_bytes`                          | [object](#message_max_bytes)                          | **Yes**  |             |
 | `num_partitions`                             | [object](#num_partitions)                             | **Yes**  |             |
 | `offsets_retention_minutes`                  | [object](#offsets_retention_minutes)                  | **Yes**  |             |
@@ -2225,6 +2240,19 @@ This is the reference documentation for the User Config object for Aiven Service
 | `title`       | string  | **Yes**  |             |
 | `type`        | string  | **Yes**  |             |
 
+###### max_incremental_fetch_session_cache_slots
+
+####### Properties
+
+| Property      | Type    | Required | Description |
+|---------------|---------|----------|-------------|
+| `default`     | integer | **Yes**  |             |
+| `description` | string  | **Yes**  |             |
+| `maximum`     | integer | **Yes**  |             |
+| `minimum`     | integer | **Yes**  |             |
+| `title`       | string  | **Yes**  |             |
+| `type`        | string  | **Yes**  |             |
+
 ###### message_max_bytes
 
 ####### Properties
@@ -2376,11 +2404,38 @@ This is the reference documentation for the User Config object for Aiven Service
 
 ###### Properties
 
-| Property                    | Type                                 | Required | Description |
-|-----------------------------|--------------------------------------|----------|-------------|
-| `consumer_isolation_level`  | [object](#consumer_isolation_level)  | **Yes**  |             |
-| `consumer_max_poll_records` | [object](#consumer_max_poll_records) | **Yes**  |             |
-| `offset_flush_interval_ms`  | [object](#offset_flush_interval_ms)  | **Yes**  |             |
+| Property                                  | Type                                               | Required | Description |
+|-------------------------------------------|----------------------------------------------------|----------|-------------|
+| `connector_client_config_override_policy` | [object](#connector_client_config_override_policy) | **Yes**  |             |
+| `consumer_auto_offset_reset`              | [object](#consumer_auto_offset_reset)              | **Yes**  |             |
+| `consumer_isolation_level`                | [object](#consumer_isolation_level)                | **Yes**  |             |
+| `consumer_max_poll_interval_ms`           | [object](#consumer_max_poll_interval_ms)           | **Yes**  |             |
+| `consumer_max_poll_records`               | [object](#consumer_max_poll_records)               | **Yes**  |             |
+| `offset_flush_interval_ms`                | [object](#offset_flush_interval_ms)                | **Yes**  |             |
+| `offset_flush_timeout_ms`                 | [object](#offset_flush_timeout_ms)                 | **Yes**  |             |
+| `session_timeout_ms`                      | [object](#session_timeout_ms)                      | **Yes**  |             |
+
+###### connector_client_config_override_policy
+
+####### Properties
+
+| Property      | Type           | Required | Description |
+|---------------|----------------|----------|-------------|
+| `description` | string         | **Yes**  |             |
+| `enum`        | [array](#enum) | **Yes**  |             |
+| `title`       | string         | **Yes**  |             |
+| `type`        | string         | **Yes**  |             |
+
+###### consumer_auto_offset_reset
+
+####### Properties
+
+| Property      | Type           | Required | Description |
+|---------------|----------------|----------|-------------|
+| `description` | string         | **Yes**  |             |
+| `enum`        | [array](#enum) | **Yes**  |             |
+| `title`       | string         | **Yes**  |             |
+| `type`        | string         | **Yes**  |             |
 
 ###### consumer_isolation_level
 
@@ -2392,6 +2447,19 @@ This is the reference documentation for the User Config object for Aiven Service
 | `enum`        | [array](#enum) | **Yes**  |             |
 | `title`       | string         | **Yes**  |             |
 | `type`        | string         | **Yes**  |             |
+
+###### consumer_max_poll_interval_ms
+
+####### Properties
+
+| Property      | Type    | Required | Description |
+|---------------|---------|----------|-------------|
+| `description` | string  | **Yes**  |             |
+| `example`     | integer | **Yes**  |             |
+| `maximum`     | integer | **Yes**  |             |
+| `minimum`     | integer | **Yes**  |             |
+| `title`       | string  | **Yes**  |             |
+| `type`        | string  | **Yes**  |             |
 
 ###### consumer_max_poll_records
 
@@ -2407,6 +2475,32 @@ This is the reference documentation for the User Config object for Aiven Service
 | `type`        | string  | **Yes**  |             |
 
 ###### offset_flush_interval_ms
+
+####### Properties
+
+| Property      | Type    | Required | Description |
+|---------------|---------|----------|-------------|
+| `description` | string  | **Yes**  |             |
+| `example`     | integer | **Yes**  |             |
+| `maximum`     | integer | **Yes**  |             |
+| `minimum`     | integer | **Yes**  |             |
+| `title`       | string  | **Yes**  |             |
+| `type`        | string  | **Yes**  |             |
+
+###### offset_flush_timeout_ms
+
+####### Properties
+
+| Property      | Type    | Required | Description |
+|---------------|---------|----------|-------------|
+| `description` | string  | **Yes**  |             |
+| `example`     | integer | **Yes**  |             |
+| `maximum`     | integer | **Yes**  |             |
+| `minimum`     | integer | **Yes**  |             |
+| `title`       | string  | **Yes**  |             |
+| `type`        | string  | **Yes**  |             |
+
+###### session_timeout_ms
 
 ####### Properties
 
@@ -2711,11 +2805,38 @@ This is the reference documentation for the User Config object for Aiven Service
 
 ###### Properties
 
-| Property                    | Type                                 | Required | Description |
-|-----------------------------|--------------------------------------|----------|-------------|
-| `consumer_isolation_level`  | [object](#consumer_isolation_level)  | **Yes**  |             |
-| `consumer_max_poll_records` | [object](#consumer_max_poll_records) | **Yes**  |             |
-| `offset_flush_interval_ms`  | [object](#offset_flush_interval_ms)  | **Yes**  |             |
+| Property                                  | Type                                               | Required | Description |
+|-------------------------------------------|----------------------------------------------------|----------|-------------|
+| `connector_client_config_override_policy` | [object](#connector_client_config_override_policy) | **Yes**  |             |
+| `consumer_auto_offset_reset`              | [object](#consumer_auto_offset_reset)              | **Yes**  |             |
+| `consumer_isolation_level`                | [object](#consumer_isolation_level)                | **Yes**  |             |
+| `consumer_max_poll_interval_ms`           | [object](#consumer_max_poll_interval_ms)           | **Yes**  |             |
+| `consumer_max_poll_records`               | [object](#consumer_max_poll_records)               | **Yes**  |             |
+| `offset_flush_interval_ms`                | [object](#offset_flush_interval_ms)                | **Yes**  |             |
+| `offset_flush_timeout_ms`                 | [object](#offset_flush_timeout_ms)                 | **Yes**  |             |
+| `session_timeout_ms`                      | [object](#session_timeout_ms)                      | **Yes**  |             |
+
+###### connector_client_config_override_policy
+
+####### Properties
+
+| Property      | Type           | Required | Description |
+|---------------|----------------|----------|-------------|
+| `description` | string         | **Yes**  |             |
+| `enum`        | [array](#enum) | **Yes**  |             |
+| `title`       | string         | **Yes**  |             |
+| `type`        | string         | **Yes**  |             |
+
+###### consumer_auto_offset_reset
+
+####### Properties
+
+| Property      | Type           | Required | Description |
+|---------------|----------------|----------|-------------|
+| `description` | string         | **Yes**  |             |
+| `enum`        | [array](#enum) | **Yes**  |             |
+| `title`       | string         | **Yes**  |             |
+| `type`        | string         | **Yes**  |             |
 
 ###### consumer_isolation_level
 
@@ -2727,6 +2848,19 @@ This is the reference documentation for the User Config object for Aiven Service
 | `enum`        | [array](#enum) | **Yes**  |             |
 | `title`       | string         | **Yes**  |             |
 | `type`        | string         | **Yes**  |             |
+
+###### consumer_max_poll_interval_ms
+
+####### Properties
+
+| Property      | Type    | Required | Description |
+|---------------|---------|----------|-------------|
+| `description` | string  | **Yes**  |             |
+| `example`     | integer | **Yes**  |             |
+| `maximum`     | integer | **Yes**  |             |
+| `minimum`     | integer | **Yes**  |             |
+| `title`       | string  | **Yes**  |             |
+| `type`        | string  | **Yes**  |             |
 
 ###### consumer_max_poll_records
 
@@ -2742,6 +2876,32 @@ This is the reference documentation for the User Config object for Aiven Service
 | `type`        | string  | **Yes**  |             |
 
 ###### offset_flush_interval_ms
+
+####### Properties
+
+| Property      | Type    | Required | Description |
+|---------------|---------|----------|-------------|
+| `description` | string  | **Yes**  |             |
+| `example`     | integer | **Yes**  |             |
+| `maximum`     | integer | **Yes**  |             |
+| `minimum`     | integer | **Yes**  |             |
+| `title`       | string  | **Yes**  |             |
+| `type`        | string  | **Yes**  |             |
+
+###### offset_flush_timeout_ms
+
+####### Properties
+
+| Property      | Type    | Required | Description |
+|---------------|---------|----------|-------------|
+| `description` | string  | **Yes**  |             |
+| `example`     | integer | **Yes**  |             |
+| `maximum`     | integer | **Yes**  |             |
+| `minimum`     | integer | **Yes**  |             |
+| `title`       | string  | **Yes**  |             |
+| `type`        | string  | **Yes**  |             |
+
+###### session_timeout_ms
 
 ####### Properties
 
@@ -3082,6 +3242,7 @@ This is the reference documentation for the User Config object for Aiven Service
 | `innodb_lock_wait_timeout`         | [object](#innodb_lock_wait_timeout)         | **Yes**  |             |
 | `innodb_log_buffer_size`           | [object](#innodb_log_buffer_size)           | **Yes**  |             |
 | `innodb_online_alter_log_max_size` | [object](#innodb_online_alter_log_max_size) | **Yes**  |             |
+| `innodb_print_all_deadlocks`       | [object](#innodb_print_all_deadlocks)       | **Yes**  |             |
 | `innodb_rollback_on_timeout`       | [object](#innodb_rollback_on_timeout)       | **Yes**  |             |
 | `interactive_timeout`              | [object](#interactive_timeout)              | **Yes**  |             |
 | `max_allowed_packet`               | [object](#max_allowed_packet)               | **Yes**  |             |
@@ -3208,6 +3369,17 @@ This is the reference documentation for the User Config object for Aiven Service
 | `example`     | integer | **Yes**  |             |
 | `maximum`     | integer | **Yes**  |             |
 | `minimum`     | integer | **Yes**  |             |
+| `title`       | string  | **Yes**  |             |
+| `type`        | string  | **Yes**  |             |
+
+###### innodb_print_all_deadlocks
+
+####### Properties
+
+| Property      | Type    | Required | Description |
+|---------------|---------|----------|-------------|
+| `description` | string  | **Yes**  |             |
+| `example`     | boolean | **Yes**  |             |
 | `title`       | string  | **Yes**  |             |
 | `type`        | string  | **Yes**  |             |
 
@@ -3482,26 +3654,28 @@ This is the reference documentation for the User Config object for Aiven Service
 
 #### Properties
 
-| Property                  | Type                               | Required | Description |
-|---------------------------|------------------------------------|----------|-------------|
-| `admin_password`          | [object](#admin_password)          | **Yes**  |             |
-| `admin_username`          | [object](#admin_username)          | **Yes**  |             |
-| `backup_hour`             | [object](#backup_hour)             | **Yes**  |             |
-| `backup_minute`           | [object](#backup_minute)           | **Yes**  |             |
-| `ip_filter`               | [object](#ip_filter)               | **Yes**  |             |
-| `pg_read_replica`         | [object](#pg_read_replica)         | **Yes**  |             |
-| `pg_service_to_fork_from` | [object](#pg_service_to_fork_from) | **Yes**  |             |
-| `pg_version`              | [object](#pg_version)              | **Yes**  |             |
-| `pg`                      | [object](#pg)                      | **Yes**  |             |
-| `pgbouncer`               | [object](#pgbouncer)               | **Yes**  |             |
-| `pglookout`               | [object](#pglookout)               | **Yes**  |             |
-| `private_access`          | [object](#private_access)          | **Yes**  |             |
-| `public_access`           | [object](#public_access)           | **Yes**  |             |
-| `recovery_target_time`    | [object](#recovery_target_time)    | **Yes**  |             |
-| `service_to_fork_from`    | [object](#service_to_fork_from)    | **Yes**  |             |
-| `synchronous_replication` | [object](#synchronous_replication) | **Yes**  |             |
-| `timescaledb`             | [object](#timescaledb)             | **Yes**  |             |
-| `variant`                 | [object](#variant)                 | **Yes**  |             |
+| Property                    | Type                                 | Required | Description |
+|-----------------------------|--------------------------------------|----------|-------------|
+| `admin_password`            | [object](#admin_password)            | **Yes**  |             |
+| `admin_username`            | [object](#admin_username)            | **Yes**  |             |
+| `backup_hour`               | [object](#backup_hour)               | **Yes**  |             |
+| `backup_minute`             | [object](#backup_minute)             | **Yes**  |             |
+| `ip_filter`                 | [object](#ip_filter)                 | **Yes**  |             |
+| `pg_read_replica`           | [object](#pg_read_replica)           | **Yes**  |             |
+| `pg_service_to_fork_from`   | [object](#pg_service_to_fork_from)   | **Yes**  |             |
+| `pg_version`                | [object](#pg_version)                | **Yes**  |             |
+| `pg`                        | [object](#pg)                        | **Yes**  |             |
+| `pgbouncer`                 | [object](#pgbouncer)                 | **Yes**  |             |
+| `pglookout`                 | [object](#pglookout)                 | **Yes**  |             |
+| `private_access`            | [object](#private_access)            | **Yes**  |             |
+| `public_access`             | [object](#public_access)             | **Yes**  |             |
+| `recovery_target_time`      | [object](#recovery_target_time)      | **Yes**  |             |
+| `service_to_fork_from`      | [object](#service_to_fork_from)      | **Yes**  |             |
+| `shared_buffers_percentage` | [object](#shared_buffers_percentage) | **Yes**  |             |
+| `synchronous_replication`   | [object](#synchronous_replication)   | **Yes**  |             |
+| `timescaledb`               | [object](#timescaledb)               | **Yes**  |             |
+| `variant`                   | [object](#variant)                   | **Yes**  |             |
+| `work_mem`                  | [object](#work_mem)                  | **Yes**  |             |
 
 #### admin_password
 
@@ -4277,6 +4451,19 @@ This is the reference documentation for the User Config object for Aiven Service
 | `title`      | string         | **Yes**  |             |
 | `type`       | [array](#type) | **Yes**  |             |
 
+#### shared_buffers_percentage
+
+##### Properties
+
+| Property      | Type    | Required | Description |
+|---------------|---------|----------|-------------|
+| `description` | string  | **Yes**  |             |
+| `example`     | number  | **Yes**  |             |
+| `maximum`     | integer | **Yes**  |             |
+| `minimum`     | integer | **Yes**  |             |
+| `title`       | string  | **Yes**  |             |
+| `type`        | string  | **Yes**  |             |
+
 #### synchronous_replication
 
 ##### Properties
@@ -4330,6 +4517,19 @@ This is the reference documentation for the User Config object for Aiven Service
 | `example` | string         | **Yes**  |             |
 | `title`   | string         | **Yes**  |             |
 | `type`    | [array](#type) | **Yes**  |             |
+
+#### work_mem
+
+##### Properties
+
+| Property      | Type    | Required | Description |
+|---------------|---------|----------|-------------|
+| `description` | string  | **Yes**  |             |
+| `example`     | integer | **Yes**  |             |
+| `maximum`     | integer | **Yes**  |             |
+| `minimum`     | integer | **Yes**  |             |
+| `title`       | string  | **Yes**  |             |
+| `type`        | string  | **Yes**  |             |
 
 ## redis
 

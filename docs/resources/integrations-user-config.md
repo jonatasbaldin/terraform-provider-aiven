@@ -9,21 +9,25 @@ This is the reference documentation for User Config objects within the Aiven API
 
 ## Properties
 
-| Property                      | Type                                   | Required | Description |
-|-------------------------------|----------------------------------------|----------|-------------|
-| `dashboard`                   | [object](#dashboard)                   | **Yes**  |             |
-| `datadog`                     | [object](#datadog)                     | **Yes**  |             |
-| `external_elasticsearch_logs` | [object](#external_elasticsearch_logs) | **Yes**  |             |
-| `jolokia`                     | [object](#jolokia)                     | **Yes**  |             |
-| `kafka_connect`               | [object](#kafka_connect)               | **Yes**  |             |
-| `kafka_mirrormaker`           | [object](#kafka_mirrormaker)           | **Yes**  |             |
-| `logs`                        | [object](#logs)                        | **Yes**  |             |
-| `metrics`                     | [object](#metrics)                     | **Yes**  |             |
-| `mirrormaker`                 | [object](#mirrormaker)                 | **Yes**  |             |
-| `prometheus`                  | [object](#prometheus)                  | **Yes**  |             |
-| `read_replica`                | [object](#read_replica)                | **Yes**  |             |
-| `rsyslog`                     | [object](#rsyslog)                     | **Yes**  |             |
-| `signalfx`                    | [object](#signalfx)                    | **Yes**  |             |
+| Property                        | Type                                     | Required | Description |
+|---------------------------------|------------------------------------------|----------|-------------|
+| `dashboard`                     | [object](#dashboard)                     | **Yes**  |             |
+| `datadog`                       | [object](#datadog)                       | **Yes**  |             |
+| `external_aws_cloudwatch_logs`  | [object](#external_aws_cloudwatch_logs)  | **Yes**  |             |
+| `external_elasticsearch_logs`   | [object](#external_elasticsearch_logs)   | **Yes**  |             |
+| `external_google_cloud_logging` | [object](#external_google_cloud_logging) | **Yes**  |             |
+| `jolokia`                       | [object](#jolokia)                       | **Yes**  |             |
+| `kafka_connect`                 | [object](#kafka_connect)                 | **Yes**  |             |
+| `kafka_mirrormaker`             | [object](#kafka_mirrormaker)             | **Yes**  |             |
+| `logs`                          | [object](#logs)                          | **Yes**  |             |
+| `m3aggregator`                  | [object](#m3aggregator)                  | **Yes**  |             |
+| `m3coordinator`                 | [object](#m3coordinator)                 | **Yes**  |             |
+| `metrics`                       | [object](#metrics)                       | **Yes**  |             |
+| `mirrormaker`                   | [object](#mirrormaker)                   | **Yes**  |             |
+| `prometheus`                    | [object](#prometheus)                    | **Yes**  |             |
+| `read_replica`                  | [object](#read_replica)                  | **Yes**  |             |
+| `rsyslog`                       | [object](#rsyslog)                       | **Yes**  |             |
+| `signalfx`                      | [object](#signalfx)                      | **Yes**  |             |
 
 ## dashboard
 
@@ -75,7 +79,27 @@ This is the reference documentation for User Config objects within the Aiven API
 | `title`     | string  | **Yes**  |             |
 | `type`      | string  | **Yes**  |             |
 
+## external_aws_cloudwatch_logs
+
+### Properties
+
+| Property               | Type    | Required | Description |
+|------------------------|---------|----------|-------------|
+| `additionalProperties` | boolean | **Yes**  |             |
+| `title`                | string  | **Yes**  |             |
+| `type`                 | string  | **Yes**  |             |
+
 ## external_elasticsearch_logs
+
+### Properties
+
+| Property               | Type    | Required | Description |
+|------------------------|---------|----------|-------------|
+| `additionalProperties` | boolean | **Yes**  |             |
+| `title`                | string  | **Yes**  |             |
+| `type`                 | string  | **Yes**  |             |
+
+## external_google_cloud_logging
 
 ### Properties
 
@@ -257,6 +281,26 @@ This is the reference documentation for User Config objects within the Aiven API
 | `minLength` | integer | **Yes**  |             |
 | `title`     | string  | **Yes**  |             |
 | `type`      | string  | **Yes**  |             |
+
+## m3aggregator
+
+### Properties
+
+| Property               | Type    | Required | Description |
+|------------------------|---------|----------|-------------|
+| `additionalProperties` | boolean | **Yes**  |             |
+| `title`                | string  | **Yes**  |             |
+| `type`                 | string  | **Yes**  |             |
+
+## m3coordinator
+
+### Properties
+
+| Property               | Type    | Required | Description |
+|------------------------|---------|----------|-------------|
+| `additionalProperties` | boolean | **Yes**  |             |
+| `title`                | string  | **Yes**  |             |
+| `type`                 | string  | **Yes**  |             |
 
 ## metrics
 

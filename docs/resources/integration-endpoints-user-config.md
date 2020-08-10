@@ -9,14 +9,16 @@ This is the reference documentation for User Config objects within the Aiven API
 
 ## Properties
 
-| Property                      | Type                                   | Required | Description |
-|-------------------------------|----------------------------------------|----------|-------------|
-| `datadog`                     | [object](#datadog)                     | **Yes**  |             |
-| `external_elasticsearch_logs` | [object](#external_elasticsearch_logs) | **Yes**  |             |
-| `jolokia`                     | [object](#jolokia)                     | **Yes**  |             |
-| `prometheus`                  | [object](#prometheus)                  | **Yes**  |             |
-| `rsyslog`                     | [object](#rsyslog)                     | **Yes**  |             |
-| `signalfx`                    | [object](#signalfx)                    | **Yes**  |             |
+| Property                        | Type                                     | Required | Description |
+|---------------------------------|------------------------------------------|----------|-------------|
+| `datadog`                       | [object](#datadog)                       | **Yes**  |             |
+| `external_aws_cloudwatch_logs`  | [object](#external_aws_cloudwatch_logs)  | **Yes**  |             |
+| `external_elasticsearch_logs`   | [object](#external_elasticsearch_logs)   | **Yes**  |             |
+| `external_google_cloud_logging` | [object](#external_google_cloud_logging) | **Yes**  |             |
+| `jolokia`                       | [object](#jolokia)                       | **Yes**  |             |
+| `prometheus`                    | [object](#prometheus)                    | **Yes**  |             |
+| `rsyslog`                       | [object](#rsyslog)                       | **Yes**  |             |
+| `signalfx`                      | [object](#signalfx)                      | **Yes**  |             |
 
 ## datadog
 
@@ -86,6 +88,74 @@ This is the reference documentation for User Config objects within the Aiven API
 | `example` | string         | **Yes**  |             |
 | `title`   | string         | **Yes**  |             |
 | `type`    | string         | **Yes**  |             |
+
+## external_aws_cloudwatch_logs
+
+### Properties
+
+| Property               | Type                  | Required | Description |
+|------------------------|-----------------------|----------|-------------|
+| `additionalProperties` | boolean               | **Yes**  |             |
+| `properties`           | [object](#properties) | **Yes**  |             |
+| `required`             | [array](#required)    | **Yes**  |             |
+| `type`                 | string                | **Yes**  |             |
+
+### properties
+
+#### Properties
+
+| Property         | Type                      | Required | Description |
+|------------------|---------------------------|----------|-------------|
+| `access_key`     | [object](#access_key)     | **Yes**  |             |
+| `log_group_name` | [object](#log_group_name) | **Yes**  |             |
+| `region`         | [object](#region)         | **Yes**  |             |
+| `secret_key`     | [object](#secret_key)     | **Yes**  |             |
+
+#### access_key
+
+##### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
+
+#### log_group_name
+
+##### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `minLength` | integer | **Yes**  |             |
+| `pattern`   | string  | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
+
+#### region
+
+##### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
+
+#### secret_key
+
+##### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
 
 ## external_elasticsearch_logs
 
@@ -171,6 +241,62 @@ This is the reference documentation for User Config objects within the Aiven API
 | `example`   | string  | **Yes**  |             |
 | `maxLength` | integer | **Yes**  |             |
 | `minLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
+
+## external_google_cloud_logging
+
+### Properties
+
+| Property               | Type                  | Required | Description |
+|------------------------|-----------------------|----------|-------------|
+| `additionalProperties` | boolean               | **Yes**  |             |
+| `properties`           | [object](#properties) | **Yes**  |             |
+| `required`             | [array](#required)    | **Yes**  |             |
+| `title`                | string                | **Yes**  |             |
+| `type`                 | string                | **Yes**  |             |
+
+### properties
+
+#### Properties
+
+| Property                      | Type                                   | Required | Description |
+|-------------------------------|----------------------------------------|----------|-------------|
+| `log_id`                      | [object](#log_id)                      | **Yes**  |             |
+| `project_id`                  | [object](#project_id)                  | **Yes**  |             |
+| `service_account_credentials` | [object](#service_account_credentials) | **Yes**  |             |
+
+#### log_id
+
+##### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
+
+#### project_id
+
+##### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `minLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
+
+#### service_account_credentials
+
+##### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
 | `title`     | string  | **Yes**  |             |
 | `type`      | string  | **Yes**  |             |
 
