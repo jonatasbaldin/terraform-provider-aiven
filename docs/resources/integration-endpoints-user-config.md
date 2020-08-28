@@ -15,6 +15,7 @@ This is the reference documentation for User Config objects within the Aiven API
 | `external_aws_cloudwatch_logs`  | [object](#external_aws_cloudwatch_logs)  | **Yes**  |             |
 | `external_elasticsearch_logs`   | [object](#external_elasticsearch_logs)   | **Yes**  |             |
 | `external_google_cloud_logging` | [object](#external_google_cloud_logging) | **Yes**  |             |
+| `external_kafka`                | [object](#external_kafka)                | **Yes**  |             |
 | `jolokia`                       | [object](#jolokia)                       | **Yes**  |             |
 | `prometheus`                    | [object](#prometheus)                    | **Yes**  |             |
 | `rsyslog`                       | [object](#rsyslog)                       | **Yes**  |             |
@@ -299,6 +300,85 @@ This is the reference documentation for User Config objects within the Aiven API
 | `maxLength` | integer | **Yes**  |             |
 | `title`     | string  | **Yes**  |             |
 | `type`      | string  | **Yes**  |             |
+
+## external_kafka
+
+### Properties
+
+| Property               | Type                  | Required | Description |
+|------------------------|-----------------------|----------|-------------|
+| `additionalProperties` | boolean               | **Yes**  |             |
+| `properties`           | [object](#properties) | **Yes**  |             |
+| `required`             | [array](#required)    | **Yes**  |             |
+| `type`                 | string                | **Yes**  |             |
+
+### properties
+
+#### Properties
+
+| Property            | Type                         | Required | Description |
+|---------------------|------------------------------|----------|-------------|
+| `bootstrap_servers` | [object](#bootstrap_servers) | **Yes**  |             |
+| `security_protocol` | [object](#security_protocol) | **Yes**  |             |
+| `ssl_ca_cert`       | [object](#ssl_ca_cert)       | **Yes**  |             |
+| `ssl_client_cert`   | [object](#ssl_client_cert)   | **Yes**  |             |
+| `ssl_client_key`    | [object](#ssl_client_key)    | **Yes**  |             |
+
+#### bootstrap_servers
+
+##### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `minLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
+
+#### security_protocol
+
+##### Properties
+
+| Property  | Type           | Required | Description |
+|-----------|----------------|----------|-------------|
+| `enum`    | [array](#enum) | **Yes**  |             |
+| `example` | string         | **Yes**  |             |
+| `title`   | string         | **Yes**  |             |
+| `type`    | string         | **Yes**  |             |
+
+#### ssl_ca_cert
+
+##### Properties
+
+| Property    | Type           | Required | Description |
+|-------------|----------------|----------|-------------|
+| `example`   | string         | **Yes**  |             |
+| `maxLength` | integer        | **Yes**  |             |
+| `title`     | string         | **Yes**  |             |
+| `type`      | [array](#type) | **Yes**  |             |
+
+#### ssl_client_cert
+
+##### Properties
+
+| Property    | Type           | Required | Description |
+|-------------|----------------|----------|-------------|
+| `example`   | string         | **Yes**  |             |
+| `maxLength` | integer        | **Yes**  |             |
+| `title`     | string         | **Yes**  |             |
+| `type`      | [array](#type) | **Yes**  |             |
+
+#### ssl_client_key
+
+##### Properties
+
+| Property    | Type           | Required | Description |
+|-------------|----------------|----------|-------------|
+| `example`   | string         | **Yes**  |             |
+| `maxLength` | integer        | **Yes**  |             |
+| `title`     | string         | **Yes**  |             |
+| `type`      | [array](#type) | **Yes**  |             |
 
 ## jolokia
 

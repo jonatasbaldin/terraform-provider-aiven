@@ -3661,6 +3661,7 @@ This is the reference documentation for the User Config object for Aiven Service
 | `backup_hour`               | [object](#backup_hour)               | **Yes**  |             |
 | `backup_minute`             | [object](#backup_minute)             | **Yes**  |             |
 | `ip_filter`                 | [object](#ip_filter)                 | **Yes**  |             |
+| `migration`                 | [object](#migration)                 | **Yes**  |             |
 | `pg_read_replica`           | [object](#pg_read_replica)           | **Yes**  |             |
 | `pg_service_to_fork_from`   | [object](#pg_service_to_fork_from)   | **Yes**  |             |
 | `pg_version`                | [object](#pg_version)                | **Yes**  |             |
@@ -3758,6 +3759,98 @@ This is the reference documentation for the User Config object for Aiven Service
 | `title`     | string  | **Yes**  |             |
 | `type`      | string  | **Yes**  |             |
 
+#### migration
+
+##### Properties
+
+| Property               | Type                  | Required | Description |
+|------------------------|-----------------------|----------|-------------|
+| `additionalProperties` | boolean               | **Yes**  |             |
+| `default`              | null                  | **Yes**  |             |
+| `properties`           | [object](#properties) | **Yes**  |             |
+| `required`             | [array](#required)    | **Yes**  |             |
+| `title`                | string                | **Yes**  |             |
+| `type`                 | [array](#type)        | **Yes**  |             |
+
+##### properties
+
+###### Properties
+
+| Property   | Type                | Required | Description |
+|------------|---------------------|----------|-------------|
+| `dbname`   | [object](#dbname)   | **Yes**  |             |
+| `host`     | [object](#host)     | **Yes**  |             |
+| `password` | [object](#password) | **Yes**  |             |
+| `port`     | [object](#port)     | **Yes**  |             |
+| `ssl`      | [object](#ssl)      | **Yes**  |             |
+| `username` | [object](#username) | **Yes**  |             |
+
+###### dbname
+
+####### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
+
+###### host
+
+####### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
+
+###### password
+
+####### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
+
+###### port
+
+####### Properties
+
+| Property  | Type    | Required | Description |
+|-----------|---------|----------|-------------|
+| `example` | integer | **Yes**  |             |
+| `maximum` | integer | **Yes**  |             |
+| `minimum` | integer | **Yes**  |             |
+| `title`   | string  | **Yes**  |             |
+| `type`    | string  | **Yes**  |             |
+
+###### ssl
+
+####### Properties
+
+| Property  | Type    | Required | Description |
+|-----------|---------|----------|-------------|
+| `default` | boolean | **Yes**  |             |
+| `title`   | string  | **Yes**  |             |
+| `type`    | string  | **Yes**  |             |
+
+###### username
+
+####### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
+
 #### pg
 
 ##### Properties
@@ -3799,6 +3892,8 @@ This is the reference documentation for the User Config object for Aiven Service
 | `max_standby_archive_delay`           | [object](#max_standby_archive_delay)           | **Yes**  |             |
 | `max_standby_streaming_delay`         | [object](#max_standby_streaming_delay)         | **Yes**  |             |
 | `max_worker_processes`                | [object](#max_worker_processes)                | **Yes**  |             |
+| `pg_partman_bgw.interval`             | [object](#pg_partman_bgw.interval)             | **Yes**  |             |
+| `pg_partman_bgw.role`                 | [object](#pg_partman_bgw.role)                 | **Yes**  |             |
 | `pg_stat_statements.track`            | [object](#pg_stat_statements.track)            | **Yes**  |             |
 | `temp_file_limit`                     | [object](#temp_file_limit)                     | **Yes**  |             |
 | `timezone`                            | [object](#timezone)                            | **Yes**  |             |
@@ -4093,6 +4188,31 @@ This is the reference documentation for the User Config object for Aiven Service
 | `description` | string  | **Yes**  |             |
 | `maximum`     | integer | **Yes**  |             |
 | `minimum`     | integer | **Yes**  |             |
+| `title`       | string  | **Yes**  |             |
+| `type`        | string  | **Yes**  |             |
+
+###### pg_partman_bgw.interval
+
+####### Properties
+
+| Property      | Type    | Required | Description |
+|---------------|---------|----------|-------------|
+| `description` | string  | **Yes**  |             |
+| `example`     | integer | **Yes**  |             |
+| `maximum`     | integer | **Yes**  |             |
+| `minimum`     | integer | **Yes**  |             |
+| `title`       | string  | **Yes**  |             |
+| `type`        | string  | **Yes**  |             |
+
+###### pg_partman_bgw.role
+
+####### Properties
+
+| Property      | Type    | Required | Description |
+|---------------|---------|----------|-------------|
+| `description` | string  | **Yes**  |             |
+| `example`     | string  | **Yes**  |             |
+| `maxLength`   | integer | **Yes**  |             |
 | `title`       | string  | **Yes**  |             |
 | `type`        | string  | **Yes**  |             |
 
@@ -4557,6 +4677,7 @@ This is the reference documentation for the User Config object for Aiven Service
 | `redis_notify_keyspace_events` | [object](#redis_notify_keyspace_events) | **Yes**  |             |
 | `redis_ssl`                    | [object](#redis_ssl)                    | **Yes**  |             |
 | `redis_timeout`                | [object](#redis_timeout)                | **Yes**  |             |
+| `service_to_fork_from`         | [object](#service_to_fork_from)         | **Yes**  |             |
 
 #### ip_filter
 
@@ -4601,11 +4722,23 @@ This is the reference documentation for the User Config object for Aiven Service
 
 | Property   | Type                | Required | Description |
 |------------|---------------------|----------|-------------|
+| `dbname`   | [object](#dbname)   | **Yes**  |             |
 | `host`     | [object](#host)     | **Yes**  |             |
 | `password` | [object](#password) | **Yes**  |             |
 | `port`     | [object](#port)     | **Yes**  |             |
 | `ssl`      | [object](#ssl)      | **Yes**  |             |
 | `username` | [object](#username) | **Yes**  |             |
+
+###### dbname
+
+####### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
 
 ###### host
 
@@ -4810,5 +4943,18 @@ This is the reference documentation for the User Config object for Aiven Service
 | `minimum` | integer | **Yes**  |             |
 | `title`   | string  | **Yes**  |             |
 | `type`    | string  | **Yes**  |             |
+
+#### service_to_fork_from
+
+##### Properties
+
+| Property     | Type           | Required | Description |
+|--------------|----------------|----------|-------------|
+| `createOnly` | boolean        | **Yes**  |             |
+| `default`    | null           | **Yes**  |             |
+| `example`    | string         | **Yes**  |             |
+| `maxLength`  | integer        | **Yes**  |             |
+| `title`      | string         | **Yes**  |             |
+| `type`       | [array](#type) | **Yes**  |             |
 
 
