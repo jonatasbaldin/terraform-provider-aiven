@@ -870,6 +870,8 @@ This is the reference documentation for the User Config object for Aiven Service
 | `metrics_enabled`               | [object](#metrics_enabled)               | **Yes**  |             |
 | `private_access`                | [object](#private_access)                | **Yes**  |             |
 | `public_access`                 | [object](#public_access)                 | **Yes**  |             |
+| `recovery_basebackup_name`      | [object](#recovery_basebackup_name)      | **Yes**  |             |
+| `service_to_fork_from`          | [object](#service_to_fork_from)          | **Yes**  |             |
 | `smtp_server`                   | [object](#smtp_server)                   | **Yes**  |             |
 | `user_auto_assign_org_role`     | [object](#user_auto_assign_org_role)     | **Yes**  |             |
 | `user_auto_assign_org`          | [object](#user_auto_assign_org)          | **Yes**  |             |
@@ -1662,6 +1664,30 @@ This is the reference documentation for the User Config object for Aiven Service
 | `title`   | string  | **Yes**  |             |
 | `type`    | string  | **Yes**  |             |
 
+#### recovery_basebackup_name
+
+##### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
+
+#### service_to_fork_from
+
+##### Properties
+
+| Property     | Type           | Required | Description |
+|--------------|----------------|----------|-------------|
+| `createOnly` | boolean        | **Yes**  |             |
+| `default`    | null           | **Yes**  |             |
+| `example`    | string         | **Yes**  |             |
+| `maxLength`  | integer        | **Yes**  |             |
+| `title`      | string         | **Yes**  |             |
+| `type`       | [array](#type) | **Yes**  |             |
+
 #### smtp_server
 
 ##### Properties
@@ -1812,13 +1838,14 @@ This is the reference documentation for the User Config object for Aiven Service
 
 #### Properties
 
-| Property               | Type                            | Required | Description |
-|------------------------|---------------------------------|----------|-------------|
-| `custom_domain`        | [object](#custom_domain)        | **Yes**  |             |
-| `ip_filter`            | [object](#ip_filter)            | **Yes**  |             |
-| `private_access`       | [object](#private_access)       | **Yes**  |             |
-| `public_access`        | [object](#public_access)        | **Yes**  |             |
-| `service_to_fork_from` | [object](#service_to_fork_from) | **Yes**  |             |
+| Property                   | Type                                | Required | Description |
+|----------------------------|-------------------------------------|----------|-------------|
+| `custom_domain`            | [object](#custom_domain)            | **Yes**  |             |
+| `ip_filter`                | [object](#ip_filter)                | **Yes**  |             |
+| `private_access`           | [object](#private_access)           | **Yes**  |             |
+| `public_access`            | [object](#public_access)            | **Yes**  |             |
+| `recovery_basebackup_name` | [object](#recovery_basebackup_name) | **Yes**  |             |
+| `service_to_fork_from`     | [object](#service_to_fork_from)     | **Yes**  |             |
 
 #### custom_domain
 
@@ -1914,6 +1941,17 @@ This is the reference documentation for the User Config object for Aiven Service
 | `example` | boolean | **Yes**  |             |
 | `title`   | string  | **Yes**  |             |
 | `type`    | string  | **Yes**  |             |
+
+#### recovery_basebackup_name
+
+##### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
 
 #### service_to_fork_from
 
@@ -4671,6 +4709,7 @@ This is the reference documentation for the User Config object for Aiven Service
 | `migration`                    | [object](#migration)                    | **Yes**  |             |
 | `private_access`               | [object](#private_access)               | **Yes**  |             |
 | `public_access`                | [object](#public_access)                | **Yes**  |             |
+| `recovery_basebackup_name`     | [object](#recovery_basebackup_name)     | **Yes**  |             |
 | `redis_lfu_decay_time`         | [object](#redis_lfu_decay_time)         | **Yes**  |             |
 | `redis_lfu_log_factor`         | [object](#redis_lfu_log_factor)         | **Yes**  |             |
 | `redis_maxmemory_policy`       | [object](#redis_maxmemory_policy)       | **Yes**  |             |
@@ -4874,6 +4913,17 @@ This is the reference documentation for the User Config object for Aiven Service
 | `example` | boolean | **Yes**  |             |
 | `title`   | string  | **Yes**  |             |
 | `type`    | string  | **Yes**  |             |
+
+#### recovery_basebackup_name
+
+##### Properties
+
+| Property    | Type    | Required | Description |
+|-------------|---------|----------|-------------|
+| `example`   | string  | **Yes**  |             |
+| `maxLength` | integer | **Yes**  |             |
+| `title`     | string  | **Yes**  |             |
+| `type`      | string  | **Yes**  |             |
 
 #### redis_lfu_decay_time
 
