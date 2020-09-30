@@ -4,7 +4,7 @@ go 1.15
 
 require (
 	cloud.google.com/go/storage v1.0.0 // indirect
-	github.com/aiven/aiven-go-client v1.5.9-0.20200916150818-025ace534a8b
+	github.com/aiven/aiven-go-client v1.5.9
 	github.com/aws/aws-sdk-go v1.30.12 // indirect
 	github.com/fatih/color v1.9.0 // indirect
 	github.com/grafana/json-schema-docs v0.1.0 // indirect
