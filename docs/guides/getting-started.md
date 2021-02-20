@@ -25,7 +25,7 @@ Terraform Cloud will also need the provider. In this case, it is best to install
 
 ## Set up
 
-You will need an API token from your account, which you can get through the [Aiven Web Console](https://console.aiven.io/profile/auth) or the [Aiven CLI](https://github.com/aiven/aiven-cli)
+You will need an API token from your account, which you can get through the [Aiven Web Console](https://console.aiven.io/profile/auth) or the [Aiven CLI](https://github.com/aiven/aiven-client).
 
 ## Your first run
 
